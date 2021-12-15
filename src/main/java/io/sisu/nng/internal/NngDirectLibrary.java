@@ -56,6 +56,7 @@ public class NngDirectLibrary implements NngLibrary {
     public native int nng_listener_create(ListenerStruct listener, SocketStruct.ByValue socket, String url);
     public native int nng_listener_id(ListenerStruct.ByValue listener);
     public native int nng_listener_start(ListenerStruct.ByValue listener, int flags);
+    public native int nng_listener_get_addr(ListenerStruct.ByValue listener, String opt, SockAddr addr);
 
     // Pipes
     public native int nng_pipe_close(PipeStruct.ByValue pipe);
@@ -294,7 +295,7 @@ public class NngDirectLibrary implements NngLibrary {
     public native  int nng_tls_config_ca_file(TlsConfigPointer cfg, String path);
     public native int nng_tls_config_cert_key_file(TlsConfigPointer cfg, String pathToKey, String password);
     public native int nng_tls_config_free(TlsConfigPointer cfg);
-    public native int nng_tls_config_hold(TlsConfigPointer cfg);
+    //public native int nng_tls_config_hold(TlsConfigPointer cfg);
     public native int nng_tls_config_own_cert(TlsConfigPointer cfg, String cert, String key, String password);
     public native int nng_tls_config_server_name(TlsConfigPointer cfg, String serverName);
     public native int nng_tls_config_version(TlsConfigPointer cfg, int minVersion, int maxVersion);
